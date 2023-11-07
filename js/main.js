@@ -11,26 +11,25 @@ let kilometri = document.getElementById('kilometri');
 // Età
 let etaPasseggero = document.getElementById('eta-passeggero');
 
+// Nome e cognome
+let nomePasseggero = document.getElementById('nome-passeggero');
+
 // Bottone
 const myButton = document.querySelector('button[type=button]');
 
 myButton.addEventListener('click', function () {
   kilometri = kilometri.value;
-  etaPasseggero = Number(etaPasseggero.value);
+  etaPasseggero = etaPasseggero.text;
+  console.log(etaPasseggero);
+  nomePasseggero = nomePasseggero.value;
 
   // Condizione
-  if (
-    !isNaN(kilometri) &&
-    !isNaN(etaPasseggero) &&
-    kilometri > 0 &&
-    etaPasseggero > 0 &&
-    etaPasseggero <= 130
-  ) {
+  if (!isNaN(kilometri) && kilometri > 0) {
     let prezzoBiglietto = kilometri * prezzoKilometro;
 
-    if (etaPasseggero < 18) {
+    if (etaPasseggero === 'Minorenne') {
       prezzoBiglietto -= (prezzoBiglietto * scontoMinori) / 100;
-    } else if (etaPasseggero > 65) {
+    } else if (etaPasseggero === 'Over 65') {
       prezzoBiglietto -= (prezzoBiglietto * scontoAnziani) / 100;
     }
 
