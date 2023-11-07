@@ -6,18 +6,17 @@ const scontoAnziani = 40;
 const prezzoKilometro = 0.21;
 
 // Kilometri
-// const kilometri = Number(prompt('Inserisci il numero di km da percorrere:'));
-const kilometri = document.querySelector('input[type=text]');
+let kilometri = document.getElementById('kilometri');
 
 // Età
-// const etaPasseggero = Number(prompt("Inserisci l'età del passeggero:"));
-const etaPasseggero = document.querySelector('input[type=number]');
+let etaPasseggero = document.getElementById('eta');
 
-const myButton = document.querySelector('button[type=submit]');
+// Bottone
+const myButton = document.querySelector('button[type=button]');
 
 myButton.addEventListener('click', function () {
-  console.log(kilometri.value);
-  console.log(etaPasseggero.value);
+  kilometri = kilometri.value;
+  etaPasseggero = Number(etaPasseggero.value);
 
   // Condizione
   if (
