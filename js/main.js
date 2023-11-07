@@ -8,12 +8,17 @@ const prezzoKilometro = 0.21;
 // Kilometri
 // const kilometri = Number(prompt('Inserisci il numero di km da percorrere:'));
 const kilometri = document.querySelector('input[type=text]');
-console.log(kilometri.value);
 
 // Età
 // const etaPasseggero = Number(prompt("Inserisci l'età del passeggero:"));
 const etaPasseggero = document.querySelector('input[type=number]');
-console.log(etaPasseggero.value);
+
+const myButton = document.querySelector('button[type=submit]');
+
+myButton.addEventListener('click', function () {
+  console.log(kilometri.value);
+  console.log(etaPasseggero.value);
+});
 
 // Condizione
 if (
