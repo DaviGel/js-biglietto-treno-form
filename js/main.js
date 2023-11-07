@@ -9,7 +9,7 @@ const prezzoKilometro = 0.21;
 let kilometri = document.getElementById('kilometri');
 
 // Età
-let etaPasseggero = document.getElementById('eta');
+let etaPasseggero = document.getElementById('eta-passeggero');
 
 // Bottone
 const myButton = document.querySelector('button[type=button]');
