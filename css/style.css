@@ -4,6 +4,33 @@
   box-sizing: border-box;
 }
 
-#title {
+body {
+  height: 100vh;
+  background-color: #fffffe;
+}
+
+.bottoni button {
+  background-color: #ffd803;
+  color: #272343;
+}
+
+.bottoni button:hover {
+  background-color: #ffe34e;
+}
+
+h1,
+h2,
+label {
+  color: #272343;
+}
+
+#title,
+#biglietto > h2 {
   text-transform: uppercase;
+  text-align: center;
+}
+
+#nome-passeggero-biglietto {
+  background-color: #ffd803;
+  color: #272343;
 }
