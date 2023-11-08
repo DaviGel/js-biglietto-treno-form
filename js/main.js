@@ -5,6 +5,17 @@ const scontoMinori = 20;
 const scontoAnziani = 40;
 const prezzoKilometro = 0.21;
 
+// Kilometri
+let kilometri = document.getElementById('kilometri');
+
+// Nome e cognome
+let nomePasseggero = document.getElementById('nome-passeggero');
+
+// Età
+let etaPasseggero = document.getElementById('eta-passeggero');
+// Qualora volessi selezionare il testo interno potrei usare questa istruzione. Se scegliessi questa strada nelle condizioni sotto potrei selezionare conforntando con le stringhe "Minorenne" o "Maggiorenne" o "Over 65"
+// etaPasseggero = etaPasseggero.options[etaPasseggero.selectedIndex].text;
+
 // Bottone genera
 const bottoneGenera = document.querySelector('button[type=button]');
 
@@ -12,30 +23,18 @@ const bottoneGenera = document.querySelector('button[type=button]');
 const bottoneAnnulla = document.querySelector('button[type=reset]');
 
 bottoneGenera.addEventListener('click', function () {
-  // Kilometri
-  let kilometri = document.getElementById('kilometri').value;
-
-  // Nome e cognome
-  let nomePasseggero = document.getElementById('nome-passeggero').value;
   document.getElementById('nome-passeggero-biglietto').innerHTML =
-    'Nome passeggero<br />' + nomePasseggero;
-
-  // Età
-  let etaPasseggero = document.getElementById('eta-passeggero').value;
-  // Qualora volessi selezionare il testo interno potrei usare questa istruzione. Se scegliessi questa strada nelle condizioni sotto potrei selezionare conforntando con le stringhe "Minorenne" o "Maggiorenne" o "Over 65"
-  // etaPasseggero = etaPasseggero.options[etaPasseggero.selectedIndex].text;
+    'Nome passeggero<br />' + nomePasseggero.value;
 
   // Prezzo biglietto
-  let prezzoBiglietto = kilometri * prezzoKilometro;
-
-  document.getElementById('costo-biglietto').innerHTML = null;
+  let prezzoBiglietto = Number(kilometri.value) * prezzoKilometro;
 
   // Condizione kilometri validi
-  if (!isNaN(kilometri) && kilometri > 0) {
+  if (!isNaN(kilometri.value) && kilometri.value > 0) {
     // Condizione età passeggero
-    if (Number(etaPasseggero) === 1) {
+    if (Number(etaPasseggero.value) === 1) {
       prezzoBiglietto -= (prezzoBiglietto * scontoMinori) / 100;
-    } else if (Number(etaPasseggero) === 3) {
+    } else if (Number(etaPasseggero.value) === 3) {
       prezzoBiglietto -= (prezzoBiglietto * scontoAnziani) / 100;
     }
     // Stampa in console
@@ -64,4 +63,10 @@ bottoneGenera.addEventListener('click', function () {
 bottoneAnnulla.addEventListener('click', function () {
   // Nascondi biglietto
   document.getElementById('biglietto').classList.add('d-none');
+  // Resetta i valori
+  nomePasseggero.value = null;
+  etaPasseggero.value = null;
+  kilometri.value = null;
+  document.getElementById('costo-biglietto').innerHTML = null;
+  console.log({ kilometri, nomePasseggero, etaPasseggero });
 });
