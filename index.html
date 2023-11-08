@@ -18,8 +18,8 @@
     <main>
       <!-- Form di input -->
       <div class="container p-5">
-        <div id="title text-secondary-emphasis">
-          <h1 class="text-center mb-3">Calcola il prezzo del tuo Biglietto</h1>
+        <div id="text-secondary-emphasis">
+          <h1 id="title" class="mb-3">Calcola il prezzo del tuo Biglietto</h1>
         </div>
         <form id="my-form" class="d-flex flex-column align-items-center">
           <div class="container text-center">
@@ -73,23 +73,26 @@
             <div class="card-body">
               <h5 class="card-title">Dettaglio Passeggeri</h5>
               <div class="container">
-                <div class="row align-items-center">
-                  <div id="nome-passeggero-biglietto" class="col p-3 rounded">
+                <div class="row align-items-center row-gap-3">
+                  <div
+                    id="nome-passeggero-biglietto"
+                    class="col-6 col-lg p-3 rounded"
+                  >
                     Nome Passeggero
                   </div>
-                  <div class="col">
+                  <div class="col-6 col-lg">
                     <div class="fw-bold">Offerta</div>
                     <div>Biglietto standard</div>
                   </div>
-                  <div class="col">
+                  <div class="col-6 col-lg">
                     <div class="fw-bold">Carrozza</div>
                     <div>1 - First class</div>
                   </div>
-                  <div class="col">
+                  <div class="col-6 col-lg">
                     <div class="fw-bold">Codice CP</div>
                     <div id="cap">00000</div>
                   </div>
-                  <div class="col">
+                  <div class="col-12 col-lg">
                     <div class="fw-bold">Costo Biglietto</div>
                     <div id="costo-biglietto"></div>
                   </div>
